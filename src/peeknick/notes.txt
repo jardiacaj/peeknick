@@ -1,0 +1,42 @@
+svn commit test
+
+********************************************************************************
+******************** CODE SNIPPETS
+********************************************************************************
+
+/*
+ * This would capture more than one screen
+ * 
+ * 
+GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+GraphicsDevice[] gs = ge.getScreenDevices();
+BufferedImage[] screenshots = new BufferedImage[gs.length];
+ 
+DisplayMode mode;
+Rectangle bounds;
+ 
+for(int i=0; i<gs.length; i++)
+{
+    mode = gs[i].getDisplayMode();
+    bounds = new Rectangle(0, 0, mode.getWidth(), mode.getHeight());
+    screenshots[i] = new Robot(gs[i]).createScreenCapture(bounds);
+}
+ */
+
+
+
+
+
+
+
+
+************************* RESTORE MINIMIZED WINDOW
+
+          if(IsIconic(hWnd))  //if the window is minimized.....
+          {
+                  ShowWindow(hWnd,0);  
+                  ShowWindow(hWnd,SW_RESTORE);
+                  PrintWin(hWnd);
+                  ShowWindow(hWnd,SW_MINIMIZE); 
+                  return 0;
+          }
